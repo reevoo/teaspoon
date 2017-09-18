@@ -14,3 +14,4 @@ Teaspoon::Driver.register(:phantomjs, "Teaspoon::Driver::Phantomjs", "teaspoon/d
 Teaspoon::Driver.register(:selenium, "Teaspoon::Driver::Selenium", "teaspoon/driver/selenium")
 Teaspoon::Driver.register(:browserstack, "Teaspoon::Driver::BrowserStack", "teaspoon/driver/browserstack")
 Teaspoon::Driver.register(:capybara_webkit, "Teaspoon::Driver::CapybaraWebkit", "teaspoon/driver/capybara_webkit")
+Teaspoon::Driver.register(:chrome_headless, "Teaspoon::Driver::ChromeHeadless", "teaspoon/driver/chrome_headless")

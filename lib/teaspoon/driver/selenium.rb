@@ -23,7 +23,7 @@ module Teaspoon
       end
 
       def run_specs(runner, url)
-        driver = ::Selenium::WebDriver.for(driver_options[:client_driver])
+        driver = build_driver
         driver.navigate.to(url)
 
         ::Selenium::WebDriver::Wait.new(driver_options).until do
@@ -46,6 +46,13 @@ module Teaspoon
           interval: 0.01,
           message: "Timed out"
         ).merge(@options)
+      end
+
+      def build_driver
+        ::Selenium::WebDriver.for(
+          driver_options[:client_driver],
+          switches: %w[--headless --disable-popup-blocking --no-sandbox --disable-gpu --window-size=1400,900]
+        )
       end
     end
   end
